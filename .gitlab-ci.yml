@@ -8,13 +8,5 @@ test_script:
   stage: test
   image: mcr.microsoft.com/powershell
   script:
-    - pwsh -Command |
-        $code = Get-Content $env:SCRIPT_NAME -Raw;
-        $errors = $null;
-        [System.Management.Automation.Language.Parser]::ParseInput($code, [ref]$null, [ref]$errors);
-        if ($errors.Count -eq 0) {
-          Write-Host "✅ Syntax OK";
-        } else {
-          $errors | ForEach-Object { Write-Error $_.Message };
-          exit 1;
-        }
+    - pwsh -File syntax-check.ps1 -ScriptPath PortKnocker.ps1
+
