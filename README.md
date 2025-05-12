@@ -4,7 +4,8 @@
 
 This repository includes:
 - `PortKnocker.ps1` — the PowerShell GUI script
-- `build.ps1` — a helper script that compiles the `.ps1` script into a standalone `.exe` using the [ps2exe](https://github.com/MScholtes/PS2EXE) module
+- `addon/build.ps1` — a helper script that compiles the `.ps1` script into a standalone `.exe` using the [ps2exe](https://github.com/MScholtes/PS2EXE) module
+- `addon/syntax-check.ps1` — checks syntax correctness of the `.ps1` script without executing it
 
 ---
 
@@ -40,42 +41,36 @@ You can run it directly using PowerShell:
 
 ---
 
-## Compiling to .EXE
+## Syntax Check (Optional)
 
-Use the provided `build.ps1` to compile `PortKnocker.ps1` into a native `.exe`:
+To verify script syntax without executing it, use:
 
 ```powershell
-.build.ps1
+pwsh -File addon/syntax-check.ps1 -ScriptPath PortKnocker.ps1
+```
+
+This performs AST-based parsing without executing any code.
+
+---
+
+## Compiling to .EXE
+
+Use the provided `build.ps1` script to compile `PortKnocker.ps1` into a native `.exe`:
+
+```powershell
+pwsh -File addon/build.ps1 -InputFile ../PortKnocker.ps1 -OutputFile ../PortKnocker.exe
 ```
 
 This will:
 
 - Check and install the `ps2exe` module (if missing)
 - Compile to `PortKnocker.exe` with GUI and metadata
-- Output to the same folder
+- Output to the root folder
 
 ### Optional Parameters
 
 ```powershell
-.build.ps1 -InputFile "script.ps1" -OutputFile "out.exe"
-```
-
----
-
-## Syntax Check (Optional)
-
-To verify script syntax without executing it:
-
-```powershell
-$code = Get-Content .\PortKnocker.ps1 -Raw
-$errors = $null
-[System.Management.Automation.Language.Parser]::ParseInput($code, [ref]$null, [ref]$errors)
-
-if ($errors.Count -eq 0) {
-    Write-Host "✅ Syntax OK"
-} else {
-    $errors | ForEach-Object { Write-Error $_.Message }
-}
+pwsh -File addon/build.ps1 -InputFile "../PortKnocker.ps1" -OutputFile "../MyKnocker.exe"
 ```
 
 ---

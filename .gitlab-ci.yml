@@ -8,5 +8,5 @@ test_script:
   stage: test
   image: mcr.microsoft.com/powershell
   script:
-    - pwsh -File syntax-check.ps1 -ScriptPath PortKnocker.ps1
+    - pwsh -File addon/syntax-check.ps1 -ScriptPath $SCRIPT_NAME
 
