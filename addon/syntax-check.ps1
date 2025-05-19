@@ -1,10 +1,10 @@
 <#
-    File:        PoctKnocker.ps1
-    Company:     //coding.Lifestyle Studio
+    File:        syntax-check.ps1
+    Company:     //coding.lifestyle Studio
     Description: Port knocking utility with GUI
     License:     MIT License
 
-    © 2024 Coding Lifestyle. Permission is hereby granted, free of charge, to any person obtaining a copy
+    © 2025 coding.lifestyle. Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the “Software”), to deal in the Software without
     restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute,
     sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished
@@ -15,7 +15,7 @@
 #>
 
 param (
-    [string]$ScriptPath = "../PortKnocker.ps1"
+    [string]$ScriptPath = "../*.ps1"
 )
 
 $code = Get-Content $ScriptPath -Raw
