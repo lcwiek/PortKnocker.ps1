@@ -1,3 +1,8 @@
+# .gitlab-ci.yml
+# Author: //coding.lifestyle Studio
+# License: MIT License
+# Repository: https://github.com/lcwiek/PortKnocker.ps1
+
 stages:
   - test
 

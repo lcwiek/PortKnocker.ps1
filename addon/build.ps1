@@ -1,7 +1,7 @@
 <#
     File:        PoctKnocker.ps1
     Company:     //coding.Lifestyle Studio
-    Description: Port knocking utility with GUI
+    Description: Build projekt via PowerShell to exe file
     License:     MIT License
 
     © 2024 Coding Lifestyle. Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -12,6 +12,8 @@
 
     THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
     LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    
+    Project repository: https://github.com/lcwiek/
 #>
 
 param(

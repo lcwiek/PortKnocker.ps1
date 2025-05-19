@@ -1,7 +1,7 @@
 <#
     File:        syntax-check.ps1
     Company:     //coding.lifestyle Studio
-    Description: Port knocking utility with GUI
+    Description: PowerShell syntax validator for .ps1 scripts using the built-in parser
     License:     MIT License
 
     © 2025 coding.lifestyle. Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -12,6 +12,8 @@
 
     THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
     LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    
+    Project repository: https://github.com/lcwiek/
 #>
 
 param (
